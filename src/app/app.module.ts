@@ -16,6 +16,7 @@ import {authInterceptorProviders} from './user/_helpers/auth.interceptor';
 import { PostCreateComponent } from './component/post/post-create/post-create.component';
 import { PostListComponent } from './component/post/post-list/post-list.component';
 import { PostDetailComponent } from './component/post/post-detail/post-detail.component';
+import { ListCommentComponent } from './component/comments/list-comment/list-comment.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PostDetailComponent } from './component/post/post-detail/post-detail.co
     ProfileComponent,
     PostCreateComponent,
     PostListComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    ListCommentComponent
   ],
     imports: [
         BrowserModule,
