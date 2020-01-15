@@ -1,8 +1,8 @@
 export interface Post {
   id: number;
-  user: string;
+  user: any;
   title: string;
   content: string;
-  date: string;
+  date: any;
   shareStatus: boolean;
 }

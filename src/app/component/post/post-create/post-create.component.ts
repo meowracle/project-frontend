@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {PostService} from '../_services/post.service';
-import {TokenStorageService} from '../_services/token-storage.service';
+import {PostService} from '../../../user/_services/post.service';
+import {TokenStorageService} from '../../../user/_services/token-storage.service';
 
 @Component({
   selector: 'app-post-create',

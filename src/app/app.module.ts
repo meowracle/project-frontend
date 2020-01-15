@@ -2,18 +2,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {LoginComponent} from './login/login.component';
-import {RegisterComponent} from './register/register.component';
-import {BoardAdminComponent} from './board-admin/board-admin.component';
-import {HomeComponent} from './home/home.component';
-import {BoardUserComponent} from './board-user/board-user.component';
-import {BoardModeratorComponent} from './board-moderator/board-moderator.component';
-import {ProfileComponent} from './profile/profile.component';
+import {LoginComponent} from './user/login/login.component';
+import {RegisterComponent} from './user/register/register.component';
+import {BoardAdminComponent} from './user/board-admin/board-admin.component';
+import {HomeComponent} from './user/home/home.component';
+import {BoardUserComponent} from './user/board-user/board-user.component';
+import {BoardModeratorComponent} from './user/board-moderator/board-moderator.component';
+import {ProfileComponent} from './user/profile/profile.component';
 import {AppRoutingModule} from './app-routing.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import {authInterceptorProviders} from './_helpers/auth.interceptor';
-import { PostCreateComponent } from './post-create/post-create.component';
+import {authInterceptorProviders} from './user/_helpers/auth.interceptor';
+import { PostCreateComponent } from './component/post/post-create/post-create.component';
+import { PostListComponent } from './component/post/post-list/post-list.component';
+import { PostDetailComponent } from './component/post/post-detail/post-detail.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { PostCreateComponent } from './post-create/post-create.component';
     BoardUserComponent,
     BoardModeratorComponent,
     ProfileComponent,
-    PostCreateComponent
+    PostCreateComponent,
+    PostListComponent,
+    PostDetailComponent
   ],
     imports: [
         BrowserModule,
