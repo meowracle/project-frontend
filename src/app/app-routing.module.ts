@@ -10,6 +10,7 @@ import {BoardModeratorComponent} from './user/board-moderator/board-moderator.co
 import {BoardAdminComponent} from './user/board-admin/board-admin.component';
 import {PostCreateComponent} from './component/post/post-create/post-create.component';
 import {PostListComponent} from './component/post/post-list/post-list.component';
+import {PostDetailComponent} from './component/post/post-detail/post-detail.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -19,8 +20,9 @@ const routes: Routes = [
   {path: 'user', component: BoardUserComponent},
   {path: 'mod', component: BoardModeratorComponent},
   {path: 'admin', component: BoardAdminComponent},
-  {path: 'create-post', component: PostCreateComponent},
-  {path: 'posts', component: PostListComponent},
+  {path: 'post-list', component: PostListComponent},
+  {path: 'post-detail/:id', component: PostDetailComponent},
+  {path: 'post-create', component: PostCreateComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 
