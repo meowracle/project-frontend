@@ -1,0 +1,31 @@
+<h1>Chi tiet post</h1>
+<form (ngSubmit)="onSubmit()" [formGroup]="editForm">
+  <div>
+    <label><b>Title</b></label>
+    <br>
+    <input type="text" value="{{post.title}}" class="form-control" formControlName="title">
+  </div>
+  <div>
+    <label><b>Content</b></label>
+    <br>
+    <textarea type="text" value="{{post.content}}" class="form-control" formControlName="content"></textarea>
+  </div>
+  <div>
+    <label><b>Nguoi post</b></label>
+    <br>
+    <input disabled type="text" value="{{post.user.username}}" class="form-control" formControlName="user">
+  </div>
+  <div>
+    <label><b>Ngay post</b></label>
+    <br>
+    <input disabled type="text" value="{{post.date}}" class="form-control" formControlName="date">
+  </div>
+  <div>
+    <label>Choose post's share status</label>
+    <select formControlName="shareStatus" class="form-control">
+      <option value="true">Public</option>
+      <option value="false">Private</option>
+    </select>
+  </div>
+  <button>Submit</button>
+</form>
