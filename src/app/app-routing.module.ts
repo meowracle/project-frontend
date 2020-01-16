@@ -13,6 +13,7 @@ import {PostListComponent} from './component/post/post-list/post-list.component'
 import {PostDetailComponent} from './component/post/post-detail/post-detail.component';
 import {ListCommentComponent} from './component/comments/list-comment/list-comment.component';
 import {CreateCommentComponent} from './component/comments/create-comment/create-comment.component';
+import {EditCommentComponent} from './component/comments/edit-comment/edit-comment.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path: 'post-create', component: PostCreateComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'comments', component: ListCommentComponent},
-  {path: 'create-comment', component: CreateCommentComponent}
+  {path: 'create-comment', component: CreateCommentComponent},
+  {path: 'comments/edit-comment/:id', component: EditCommentComponent}
 ];
 
 @NgModule({

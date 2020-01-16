@@ -1,6 +1,8 @@
+<div class="container" *ngIf="currentUser">
 <form (ngSubmit)="onsubmit()" [formGroup]="createForm">
   <p>description</p>
   <input type = "text" placeholder="comment" formControlName="description" >
   <br>
   <button>Binh Luan</button>
 </form>
+</div>

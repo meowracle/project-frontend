@@ -3,4 +3,5 @@
   {{comment.user.username}}
   <br>
   {{comment.description}}
+  <button [routerLink]="['/comments/edit-comment/',comment.id]">Edit</button>
 </div>

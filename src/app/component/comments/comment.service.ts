@@ -19,5 +19,11 @@ export class CommentService {
   createComment(comment: Comment): Observable<any> {
     return this.http.post(this.apiURL, comment);
   }
-
+  getCommentById(id: string): Observable<Comment> {
+    return this.http.get<Comment>(this.apiURL + id);
+  }
+  editComment(comment: Comment): Observable<any> {
+    console.log(comment);
+    return this.http.put(this.apiURL + comment.id, comment);
+  }
 }
