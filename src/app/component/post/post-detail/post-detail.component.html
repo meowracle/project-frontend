@@ -9,11 +9,18 @@
   <br>
   <textarea disabled value="{{post.content}}" class="form-control"></textarea>
 </div>
-<div *ngIf="currentUser.id != post.user.id">
-  <label><b>Nguoi post</b></label>
-  <br>
-  <input disabled type="text" value="{{post.user.username}}" class="form-control">
+<div *ngIf="!currentUser; else loggedOut">
+    <label><b>Nguoi post</b></label>
+    <br>
+    <input disabled type="text" value="{{post.user.username}}" class="form-control">
 </div>
+<ng-template #loggedOut>
+  <div *ngIf="currentUser.id != post.user.id">
+    <label><b>Nguoi post</b></label>
+    <br>
+    <input disabled type="text" value="{{post.user.username}}" class="form-control">
+  </div>
+</ng-template>
 <div>
   <label><b>Ngay post</b></label>
   <br>

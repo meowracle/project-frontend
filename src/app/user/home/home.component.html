@@ -27,7 +27,7 @@
     <td><b>Nguoi dang bai</b></td>
     </thead>
     <tr *ngFor="let post of postList">
-      <td>{{post.title}}</td>
+      <td><a [routerLink]="['/post-detail', post.id]">{{post.title}}</a></td>
       <td>{{post.user.username}}</td>
     </tr>
   </table>
