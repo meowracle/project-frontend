@@ -17,6 +17,7 @@ import { PostCreateComponent } from './component/post/post-create/post-create.co
 import { PostListComponent } from './component/post/post-list/post-list.component';
 import { PostDetailComponent } from './component/post/post-detail/post-detail.component';
 import { ListCommentComponent } from './component/comments/list-comment/list-comment.component';
+import {CreateCommentComponent} from './component/comments/create-comment/create-comment.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ListCommentComponent } from './component/comments/list-comment/list-com
     PostCreateComponent,
     PostListComponent,
     PostDetailComponent,
-    ListCommentComponent
+    ListCommentComponent,
+    CreateCommentComponent
   ],
     imports: [
         BrowserModule,

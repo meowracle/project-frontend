@@ -11,6 +11,8 @@ import {BoardAdminComponent} from './user/board-admin/board-admin.component';
 import {PostCreateComponent} from './component/post/post-create/post-create.component';
 import {PostListComponent} from './component/post/post-list/post-list.component';
 import {PostDetailComponent} from './component/post/post-detail/post-detail.component';
+import {ListCommentComponent} from './component/comments/list-comment/list-comment.component';
+import {CreateCommentComponent} from './component/comments/create-comment/create-comment.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -23,7 +25,9 @@ const routes: Routes = [
   {path: 'post-list', component: PostListComponent},
   {path: 'post-detail/:id', component: PostDetailComponent},
   {path: 'post-create', component: PostCreateComponent},
-  {path: '', redirectTo: 'home', pathMatch: 'full'}
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'comments', component: ListCommentComponent},
+  {path: 'create-comment', component: CreateCommentComponent}
 ];
 
 @NgModule({

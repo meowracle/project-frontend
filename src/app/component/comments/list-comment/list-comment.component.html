@@ -1,1 +1,6 @@
-<p>list-comment works!</p>
+<div *ngFor="let comment of listComment">
+  <p>Name</p>
+  {{comment.user.username}}
+  <br>
+  {{comment.description}}
+</div>
