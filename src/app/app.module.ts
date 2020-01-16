@@ -19,6 +19,8 @@ import { PostDetailComponent } from './component/post/post-detail/post-detail.co
 import { ListCommentComponent } from './component/comments/list-comment/list-comment.component';
 import {CreateCommentComponent} from './component/comments/create-comment/create-comment.component';
 import { EditCommentComponent } from './component/comments/edit-comment/edit-comment.component';
+import { PostEditComponent } from './component/post/post-edit/post-edit.component';
+import { PostDeleteComponent } from './component/post/post-delete/post-delete.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,10 @@ import { EditCommentComponent } from './component/comments/edit-comment/edit-com
     PostDetailComponent,
     ListCommentComponent,
     CreateCommentComponent,
-    EditCommentComponent
+    EditCommentComponent,
+    PostDetailComponent,
+    PostEditComponent,
+    PostDeleteComponent
   ],
     imports: [
         BrowserModule,

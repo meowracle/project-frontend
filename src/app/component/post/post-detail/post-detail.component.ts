@@ -3,6 +3,7 @@ import {Post} from '../../../interfaces/post';
 import {PostService} from '../../../user/_services/post.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder} from '@angular/forms';
+import {TokenStorageService} from '../../../user/_services/token-storage.service';
 
 @Component({
   selector: 'app-post-detail',
@@ -11,8 +12,10 @@ import {FormBuilder} from '@angular/forms';
 })
 export class PostDetailComponent implements OnInit {
   post: Post;
+  currentUser: any;
 
   constructor(
+    private token: TokenStorageService,
     private postService: PostService,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
@@ -20,6 +23,7 @@ export class PostDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.currentUser = this.token.getUser();
     const id = +this.route.snapshot.paramMap.get('id');
     console.log(id);
     this.postService.getPostById(id).subscribe(

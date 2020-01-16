@@ -14,6 +14,8 @@ import {PostDetailComponent} from './component/post/post-detail/post-detail.comp
 import {ListCommentComponent} from './component/comments/list-comment/list-comment.component';
 import {CreateCommentComponent} from './component/comments/create-comment/create-comment.component';
 import {EditCommentComponent} from './component/comments/edit-comment/edit-comment.component';
+import {PostEditComponent} from './component/post/post-edit/post-edit.component';
+import {PostDeleteComponent} from './component/post/post-delete/post-delete.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -25,6 +27,8 @@ const routes: Routes = [
   {path: 'admin', component: BoardAdminComponent},
   {path: 'post-list', component: PostListComponent},
   {path: 'post-detail/:id', component: PostDetailComponent},
+  {path: 'post-edit/:id', component: PostEditComponent},
+  {path: 'post-delete/:id', component: PostDeleteComponent},
   {path: 'post-create', component: PostCreateComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'comments', component: ListCommentComponent},
