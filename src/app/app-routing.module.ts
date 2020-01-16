@@ -12,6 +12,7 @@ import {PostCreateComponent} from './component/post/post-create/post-create.comp
 import {PostListComponent} from './component/post/post-list/post-list.component';
 import {PostDetailComponent} from './component/post/post-detail/post-detail.component';
 import {PostEditComponent} from './component/post/post-edit/post-edit.component';
+import {PostDeleteComponent} from './component/post/post-delete/post-delete.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'post-list', component: PostListComponent},
   {path: 'post-detail/:id', component: PostDetailComponent},
   {path: 'post-edit/:id', component: PostEditComponent},
+  {path: 'post-delete/:id', component: PostDeleteComponent},
   {path: 'post-create', component: PostCreateComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];

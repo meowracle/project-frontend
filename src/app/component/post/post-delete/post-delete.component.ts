@@ -6,13 +6,13 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {TokenStorageService} from '../../../user/_services/token-storage.service';
 
 @Component({
-  selector: 'app-post-edit',
-  templateUrl: './post-edit.component.html',
-  styleUrls: ['./post-edit.component.css']
+  selector: 'app-post-delete',
+  templateUrl: './post-delete.component.html',
+  styleUrls: ['./post-delete.component.css']
 })
-export class PostEditComponent implements OnInit {
-  editForm: FormGroup;
+export class PostDeleteComponent implements OnInit {
   post: Post;
+  deleteForm: FormGroup;
   currentUser: any;
 
   constructor(
@@ -26,7 +26,7 @@ export class PostEditComponent implements OnInit {
 
   ngOnInit() {
     this.currentUser = this.token.getUser();
-    this.editForm = this.formBuilder.group({
+    this.deleteForm = this.formBuilder.group({
       id: [''],
       user: [''],
       title: [''],
@@ -38,7 +38,7 @@ export class PostEditComponent implements OnInit {
     this.postService.getPostById(id)
       .subscribe(next => {
         this.post = next;
-        this.editForm.patchValue(this.post);
+        this.deleteForm.patchValue(this.post);
       }, error => {
         console.log(error);
         this.post = null;
@@ -46,13 +46,17 @@ export class PostEditComponent implements OnInit {
   }
 
   onSubmit() {
-    const {value} = this.editForm;
-    value.user = {id: this.post.user.id};
-    this.postService.editPost(value)
-      .subscribe(next => {
-        alert('sua thong tin post thanh cong');
-      }, error => {
-        alert('co loi, sua khong thanh cong');
-      });
+    const s = confirm('Are you sure?');
+    if (s) {
+      const {value} = this.deleteForm;
+      value.user = {id: this.post.user.id};
+      console.log(value);
+      this.postService.deletePost(value.id)
+        .subscribe(next => {
+          alert('xoa post thanh cong');
+          this.router.navigate(['']);
+        });
+    }
   }
+
 }
