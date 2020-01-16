@@ -9,7 +9,7 @@
   <br>
   <textarea disabled value="{{post.content}}" class="form-control"></textarea>
 </div>
-<div>
+<div *ngIf="currentUser.id != post.user.id">
   <label><b>Nguoi post</b></label>
   <br>
   <input disabled type="text" value="{{post.user.username}}" class="form-control">

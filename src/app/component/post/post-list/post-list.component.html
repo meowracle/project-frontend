@@ -6,7 +6,7 @@
     <td><b>Content</b></td>
     </thead>
     <tr *ngFor="let post of postList">
-      <td *ngIf="post.user.username == currentUser.username">{{post.title}}</td>
+      <td *ngIf="post.user.username == currentUser.username"><a [routerLink]="['/post-detail', post.id]">{{post.title}}</a></td>
       <td *ngIf="post.user.username == currentUser.username">{{post.content}}</td>
       <td *ngIf="post.user.username == currentUser.username"><a [routerLink]="['/post-edit/', post.id]">Edit</a></td>
       <td *ngIf="post.user.username == currentUser.username"><a [routerLink]="['/post-delete/', post.id]">Delete</a></td>
