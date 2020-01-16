@@ -1,0 +1,7 @@
+<div *ngFor="let comment of listComment">
+  <p>Name</p>
+  {{comment.user.username}}
+  <br>
+  {{comment.description}}
+  <button [routerLink]="['/comments/edit-comment/',comment.id]">Edit</button>
+</div>
