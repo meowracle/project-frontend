@@ -16,6 +16,7 @@ import {CreateCommentComponent} from './component/comments/create-comment/create
 import {EditCommentComponent} from './component/comments/edit-comment/edit-comment.component';
 import {PostEditComponent} from './component/post/post-edit/post-edit.component';
 import {PostDeleteComponent} from './component/post/post-delete/post-delete.component';
+import {DeleteCommentComponent} from './component/comments/delete-comment/delete-comment.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -33,7 +34,8 @@ const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'comments', component: ListCommentComponent},
   {path: 'create-comment', component: CreateCommentComponent},
-  {path: 'comments/edit-comment/:id', component: EditCommentComponent}
+  {path: 'comments/edit-comment/:id', component: EditCommentComponent},
+  {path: 'comments/delete-comment/:id', component: DeleteCommentComponent}
 ];
 
 @NgModule({
