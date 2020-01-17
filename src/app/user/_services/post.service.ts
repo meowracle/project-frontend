@@ -21,7 +21,7 @@ export class PostService {
   }
 
   createPost(post: Post): Observable<any> {
-    return this.http.post(API_URL + 'create-post', post);
+    return this.http.post(API_URL + 'posts', post);
   }
 
   editPost(post: Post): Observable<any> {

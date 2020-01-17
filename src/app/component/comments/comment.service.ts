@@ -8,7 +8,7 @@ import {Comment} from '../../interfaces/comment';
   providedIn: 'root'
 })
 export class CommentService {
-  apiURL = 'http://localhost:8080/api/comments/';
+  apiURL = 'http://localhost:8080/api/comments';
 
   constructor(private http: HttpClient) {
   }
@@ -19,11 +19,10 @@ export class CommentService {
   createComment(comment: Comment): Observable<any> {
     return this.http.post(this.apiURL, comment);
   }
-  getCommentById(id: string): Observable<Comment> {
+  getCommentById(id: number): Observable<Comment> {
     return this.http.get<Comment>(this.apiURL + id);
   }
   editComment(comment: Comment): Observable<any> {
-    console.log(comment);
     return this.http.put(this.apiURL + comment.id, comment);
   }
   deleteComment(id: number): Observable<any> {

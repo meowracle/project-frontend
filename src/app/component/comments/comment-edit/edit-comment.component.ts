@@ -1,18 +1,18 @@
 import {Component, OnInit} from '@angular/core';
-import {Comment} from '../../../interfaces/comment';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import {Comment} from '../../../interfaces/comment';
 import {CommentService} from '../comment.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute, Route, Router} from '@angular/router';
 import {TokenStorageService} from '../../../user/_services/token-storage.service';
 
 @Component({
-  selector: 'app-delete-comment',
-  templateUrl: './delete-comment.component.html',
-  styleUrls: ['./delete-comment.component.css']
+  selector: 'app-edit-comment',
+  templateUrl: './edit-comment.component.html',
+  styleUrls: ['./edit-comment.component.css']
 })
-export class DeleteCommentComponent implements OnInit {
+export class EditCommentComponent implements OnInit {
+  editForm: FormGroup;
   comment: Comment;
-  deleteForm: FormGroup;
   currentUser: any;
 
   constructor(private fb: FormBuilder,
@@ -24,14 +24,15 @@ export class DeleteCommentComponent implements OnInit {
 
   ngOnInit() {
     this.currentUser = this.token.getUser();
-    this.deleteForm = this.fb.group({
+    this.editForm = this.fb.group({
       id: [''],
       description: ['']
     });
-    const id = this.route.snapshot.paramMap.get('id');
+    const id = +this.route.snapshot.paramMap.get('id');
     this.commentService.getCommentById(id).subscribe(next => {
       this.comment = next;
-      this.deleteForm.patchValue(this.comment);
+      console.log(this.comment);
+      this.editForm.patchValue(this.comment);
     }, error => {
       console.log(error);
       this.comment = null;
@@ -39,16 +40,11 @@ export class DeleteCommentComponent implements OnInit {
   }
 
   onsubmit() {
-    const s = confirm('You want delete this comment ?');
-    if (s) {
-      const {value} = this.deleteForm;
-      console.log(value);
-      this.commentService.deleteComment(value.id).subscribe(next => {
-        alert('deleted');
-        this.router.navigate(['']);
-      });
-    }
-
+    const {value} = this.editForm;
+    console.log(value);
+    this.commentService.editComment(value).subscribe(next => {
+      confirm('edited');
+    });
   }
 
 }

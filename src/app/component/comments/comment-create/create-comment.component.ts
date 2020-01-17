@@ -12,6 +12,7 @@ import {TokenStorageService} from '../../../user/_services/token-storage.service
 export class CreateCommentComponent implements OnInit {
   private createForm: FormGroup;
   currentUser: any;
+  currentPost: any;
 
 
   constructor(private fb: FormBuilder,
