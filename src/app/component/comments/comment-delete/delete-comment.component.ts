@@ -28,7 +28,7 @@ export class DeleteCommentComponent implements OnInit {
       id: [''],
       description: ['']
     });
-    const id = this.route.snapshot.paramMap.get('id');
+    const id = +this.route.snapshot.paramMap.get('id');
     this.commentService.getCommentById(id).subscribe(next => {
       this.comment = next;
       this.deleteForm.patchValue(this.comment);
