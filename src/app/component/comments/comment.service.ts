@@ -23,7 +23,6 @@ export class CommentService {
     return this.http.get<Comment>(this.apiURL + id);
   }
   editComment(comment: Comment): Observable<any> {
-    console.log(comment);
     return this.http.put(this.apiURL + comment.id, comment);
   }
   deleteComment(id: number): Observable<any> {

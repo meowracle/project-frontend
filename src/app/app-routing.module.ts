@@ -18,6 +18,7 @@ import {PostEditComponent} from './component/post/post-edit/post-edit.component'
 import {PostDeleteComponent} from './component/post/post-delete/post-delete.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
@@ -30,10 +31,9 @@ const routes: Routes = [
   {path: 'post-edit/:id', component: PostEditComponent},
   {path: 'post-delete/:id', component: PostDeleteComponent},
   {path: 'post-create', component: PostCreateComponent},
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'comments', component: ListCommentComponent},
-  {path: 'create-comment', component: CreateCommentComponent},
-  {path: 'comments/edit-comment/:id', component: EditCommentComponent}
+  {path: 'comment-list', component: ListCommentComponent},
+  {path: 'comment-create', component: CreateCommentComponent},
+  {path: 'comments-edit/:id', component: EditCommentComponent},
 ];
 
 @NgModule({
