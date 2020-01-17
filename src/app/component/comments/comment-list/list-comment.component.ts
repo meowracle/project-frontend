@@ -15,7 +15,9 @@ export class ListCommentComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.commentService.getComments().subscribe(next => (this.listComment = next), error => (this.listComment = []));
+    this.commentService.getComments()
+      .subscribe(next => (this.listComment = next)
+        , error => (this.listComment = []));
   }
 
 }
