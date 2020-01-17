@@ -26,4 +26,7 @@ export class CommentService {
     console.log(comment);
     return this.http.put(this.apiURL + comment.id, comment);
   }
+  deleteComment(id: number): Observable<any> {
+    return this.http.delete(this.apiURL + id);
+  }
 }
