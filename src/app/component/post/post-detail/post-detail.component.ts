@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import {Post} from '../../../interfaces/post';
 import {PostService} from '../../../user/_services/post.service';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -9,6 +9,10 @@ import {TokenStorageService} from '../../../user/_services/token-storage.service
   selector: 'app-post-detail',
   templateUrl: './post-detail.component.html',
   styleUrls: ['./post-detail.component.css']
+})
+
+@Injectable({
+  providedIn: 'root'
 })
 export class PostDetailComponent implements OnInit {
   post: Post;
