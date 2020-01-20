@@ -17,7 +17,7 @@ export class PostCreateComponent implements OnInit {
   currentUser: any;
   usedPictureFiles: any[];
   previewUrl: any[];
-  picture: any[];
+  pictures: any[];
   post: Post;
 
   constructor(
@@ -37,11 +37,11 @@ export class PostCreateComponent implements OnInit {
       user: [''],
       title: [''],
       content: [''],
-      shareStatus: ['']
+      shareStatus: [''],
     });
     this.usedPictureFiles = [];
     this.previewUrl = [];
-    this.picture = [];
+    this.pictures = [];
   }
 
   onSubmit() {
@@ -49,7 +49,7 @@ export class PostCreateComponent implements OnInit {
     value.user = {id: this.currentUser.id};
     this.post = value;
     for (const preview of this.previewUrl) {
-      this.picture.push({
+      this.pictures.push({
         id: '',
         src: preview
       });
@@ -77,7 +77,7 @@ export class PostCreateComponent implements OnInit {
   }
 
   createPost() {
-    this.post.picture = this.picture;
+    this.post.pictures = this.pictures;
     this.postService.createPost(this.post)
       .subscribe(next => {
         this.ngOnInit();

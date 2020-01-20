@@ -7,5 +7,5 @@ export interface Post {
   content: string;
   date: any;
   shareStatus: boolean;
-  picture: Picture[];
+  pictures: Picture[];
 }

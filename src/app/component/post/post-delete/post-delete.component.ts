@@ -27,7 +27,7 @@ export class PostDeleteComponent implements OnInit {
   ngOnInit() {
     this.currentUser = this.token.getUser();
     this.deleteForm = this.formBuilder.group({
-      id: [''],
+      id: '',
       user: [''],
       title: [''],
       content: [''],
