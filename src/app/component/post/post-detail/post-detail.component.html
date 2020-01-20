@@ -26,3 +26,10 @@
   <br>
   <input disabled type="text" value="{{post.date}}" class="form-control">
 </div>
+<div>
+  <label>Pictures</label>
+  <div *ngFor="let picture of post.pictures, index as i">
+    <img src="{{picture.src}}" width="200px">
+  </div>
+</div>
+<app-create-comment></app-create-comment>

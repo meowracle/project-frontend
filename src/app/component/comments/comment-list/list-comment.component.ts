@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CommentService} from '../comment.service';
 import {Comment} from '../../../interfaces/comment';
+import {TokenStorageService} from '../../../user/_services/token-storage.service';
 
 
 @Component({
@@ -10,11 +11,15 @@ import {Comment} from '../../../interfaces/comment';
 })
 export class ListCommentComponent implements OnInit {
   listComment: Comment[];
+  currentUser: any;
 
-  constructor(private commentService: CommentService) {
+  constructor(
+    private token: TokenStorageService,
+    private commentService: CommentService) {
   }
 
   ngOnInit() {
+    this.currentUser = this.token.getUser();
     this.commentService.getComments()
       .subscribe(next => (this.listComment = next)
         , error => (this.listComment = []));

@@ -21,6 +21,7 @@ export class PostService {
   }
 
   createPost(post: Post): Observable<any> {
+    console.log(post);
     return this.http.post(API_URL + 'posts', post);
   }
 

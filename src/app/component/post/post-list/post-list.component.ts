@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Post} from '../../../interfaces/post';
 import {PostService} from '../../../user/_services/post.service';
 import {TokenStorageService} from '../../../user/_services/token-storage.service';
+import {AppComponent} from '../../../app.component';
 
 @Component({
   selector: 'app-post-list',
@@ -13,7 +14,8 @@ export class PostListComponent implements OnInit {
   currentUser: any;
 
   constructor(private token: TokenStorageService,
-              private postService: PostService) {
+              private postService: PostService,
+              private appComponent: AppComponent) {
   }
 
   ngOnInit() {

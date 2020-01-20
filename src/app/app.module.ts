@@ -42,7 +42,7 @@ import { DeleteCommentComponent } from './component/comments/comment-delete/dele
     PostDetailComponent,
     PostEditComponent,
     PostDeleteComponent,
-    DeleteCommentComponent
+    DeleteCommentComponent,
   ],
     imports: [
         BrowserModule,
