@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {PostService} from '../../../user/_services/post.service';
 import {TokenStorageService} from '../../../user/_services/token-storage.service';
 import {Post} from '../../../interfaces/post';
@@ -35,8 +35,8 @@ export class PostCreateComponent implements OnInit {
     this.createForm = this.formBuilder.group({
       id: '',
       user: [''],
-      title: [''],
-      content: [''],
+      title: ['', [Validators.required, Validators.minLength(1)]],
+      content: ['', [Validators.required, Validators.minLength(6)]],
       shareStatus: [''],
     });
     this.usedPictureFiles = [];
@@ -80,6 +80,7 @@ export class PostCreateComponent implements OnInit {
     this.post.pictures = this.pictures;
     this.postService.createPost(this.post)
       .subscribe(next => {
+        alert('tao post thanh cong');
         this.ngOnInit();
       });
   }

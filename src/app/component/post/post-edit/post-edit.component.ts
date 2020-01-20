@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Post} from '../../../interfaces/post';
 import {PostService} from '../../../user/_services/post.service';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -34,8 +34,8 @@ export class PostEditComponent implements OnInit {
     this.editForm = this.formBuilder.group({
       id: '',
       user: [''],
-      title: [''],
-      content: [''],
+      title: ['', [Validators.required, Validators.minLength(1)]],
+      content: ['', [Validators.required, Validators.minLength(6)]],
       date: [''],
       shareStatus: ['']
     });
@@ -61,33 +61,17 @@ export class PostEditComponent implements OnInit {
   onSubmit() {
     const {value} = this.editForm;
     value.user = {id: this.post.user.id};
-    // code cu~
-    /*this.postService.editPost(value)
-      .subscribe(next => {
-        alert('sua thong tin post thanh cong');
-      }, error => {
-        alert('co loi, sua khong thanh cong');
-      });*/
     this.post = value;
     for (const preview of this.previewUrl) {
       this.pictures.push({
         id: '',
         src: preview
       });
-      // code cu~
-/*      this.pictureService.createPicture(preview)
-        .subscribe(next => {
-          this.pictures.push({
-            id: next
-          });
-        });*/
     }
-    console.log(this.pictures);
     this.post.pictures = this.pictures;
-    console.log(this.pictures);
-    console.log(this.post.pictures);
     this.postService.editPost(this.post)
       .subscribe(next => {
+        alert('chinh sua post thanh cong');
         console.log(next);
         this.ngOnInit();
       });
@@ -98,14 +82,6 @@ export class PostEditComponent implements OnInit {
     this.usedPictureFiles = event.srcElement.files;
     this.preview();
   }
-
-/*  savePost() {
-    this.post.pictures = this.pictures;
-    this.postService.editPost(this.post)
-      .subscribe(next => {
-        this.ngOnInit();
-      });
-  }*/
 
   preview() {
     this.previewUrl = [];

@@ -54,7 +54,7 @@ export class PostDeleteComponent implements OnInit {
       this.postService.deletePost(value.id)
         .subscribe(next => {
           alert('xoa post thanh cong');
-          this.router.navigate(['']);
+          this.router.navigate(['post-list']);
         });
     }
   }

@@ -7,12 +7,20 @@
         <label><b>Title</b></label>
         <br>
         <input type="text" value="{{post.title}}" class="form-control" formControlName="title">
+        <div class="alert-danger" *ngIf="editForm.get('title').invalid && editForm.get('title').touched"
+             style="color: red">
+          Title must be at least 1 character!
+        </div>
       </div>
 
       <div>
         <label><b>Content</b></label>
         <br>
         <textarea type="text" value="{{post.content}}" class="form-control" formControlName="content"></textarea>
+        <div class="alert-danger" *ngIf="editForm.get('content').invalid && editForm.get('content').touched"
+             style="color: red">
+          Content must be at least 1 character!
+        </div>
       </div>
 
       <div hidden>
