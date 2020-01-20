@@ -4,6 +4,7 @@ import {CommentService} from '../comment.service';
 import {Comment} from '../../../interfaces/comment';
 import {TokenStorageService} from '../../../user/_services/token-storage.service';
 import {PostDetailComponent} from '../../post/post-detail/post-detail.component';
+import {Post} from '../../../interfaces/post';
 
 @Component({
   selector: 'app-create-comment',
@@ -24,16 +25,22 @@ export class CreateCommentComponent implements OnInit {
 
   ngOnInit() {
     this.currentUser = this.token.getUser();
-    this.currentPost = {id: this.postDetail.post.id};
+    this.currentPost = this.postDetail.post;
+    console.log(this.currentPost);
     this.createForm = this.fb.group({
-      description: ['']
+      id: [''],
+      description: [''],
+      user: [''],
+      post: [''],
     });
   }
 
   onSubmit() {
     const {value} = this.createForm;
     value.user = {id: this.currentUser.id};
+    console.log(value.user);
     value.post = this.currentPost;
+    console.log(value.post);
     this.commentService.createComment(value)
       .subscribe(next => {
         this.createForm.reset({
