@@ -26,7 +26,7 @@ export class CreateCommentComponent implements OnInit {
   ngOnInit() {
     this.currentUser = this.token.getUser();
     this.currentPost = this.postDetail.post;
-    console.log(this.currentPost);
+/*    console.log(this.currentPost);*/
     this.createForm = this.fb.group({
       id: [''],
       description: [''],
