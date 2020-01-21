@@ -31,13 +31,10 @@ export class PostDetailComponent implements OnInit {
     console.log('http://localhost:4200/' + currentUrl);
     this.currentUser = this.token.getUser();
     const id = +this.route.snapshot.paramMap.get('id');
-/*    console.log(id);*/
     this.postService.getPostById(id).subscribe(
       next => {
         this.post = next;
-/*        console.log(this.post);*/
       }, error => {
-/*        console.log(error);*/
         this.post = null;
       }
     );
