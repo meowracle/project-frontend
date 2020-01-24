@@ -1,8 +1,8 @@
 <div *ngFor="let comment of listComment">
-  <p>Name</p>
-  {{comment.user.username}}
-  <br>
+  <b>{{comment.user.username}}:</b>
   {{comment.description}}
-  <button [routerLink]="['/comments-edit/',comment.id]">Edit</button>
-  <button [routerLink]="['/comments-delete/',comment.id]">Delete</button>
+  <div *ngIf="currentUser.id == comment.user.id">
+    <button [routerLink]="['/comment-edit/',comment.id]">Edit</button>
+    <button [routerLink]="['/comment-delete/',comment.id]">Delete</button>
+  </div>
 </div>
