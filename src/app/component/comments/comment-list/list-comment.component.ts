@@ -31,7 +31,7 @@ export class ListCommentComponent implements OnInit {
         for (const cmt of next) {
           if (cmt.post.id === this.currentPost.id) {
             this.listComment.push(cmt);
-            console.log(this.listComment);
+/*            console.log(this.listComment);*/
           }
         }
       }, error => {
