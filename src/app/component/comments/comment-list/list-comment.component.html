@@ -57,8 +57,4 @@
         <a [routerLink]="['/comments-delete/',comment.id]">xóa</a>
       </div>
     </div>
-  <div *ngIf="currentUser.id == comment.user.id">
-    <button [routerLink]="['/comment-edit/',comment.id]">Edit</button>
-    <button [routerLink]="['/comment-delete/',comment.id]">Delete</button>
-  </div>
 </div>
