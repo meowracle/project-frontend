@@ -34,8 +34,8 @@ const routes: Routes = [
   {path: 'post-create', component: PostCreateComponent},
   {path: 'comment-list', component: ListCommentComponent},
   {path: 'comment-create', component: CreateCommentComponent},
-  {path: 'comments-edit/:id', component: EditCommentComponent},
-  {path: 'comments-delete/:id', component: DeleteCommentComponent},
+  {path: 'comment-edit/:id', component: EditCommentComponent},
+  {path: 'comment-delete/:id', component: DeleteCommentComponent},
 ];
 
 @NgModule({
