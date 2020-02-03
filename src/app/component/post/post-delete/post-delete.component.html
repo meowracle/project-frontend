@@ -1,43 +1,44 @@
-<div class="container" *ngIf="currentUser; else loggedOut">
-  <div class="container" *ngIf="currentUser.id == post.user.id; else NotAuthorized">
-    <h1>Xoa post</h1>
-    <form (ngSubmit)="onSubmit()" [formGroup]="deleteForm">
-      <div>
-        <label><b>Title</b></label>
-        <br>
-        <input readonly type="text" value="{{post.title}}" class="form-control" formControlName="title">
-      </div>
-      <div>
-        <label><b>Content</b></label>
-        <br>
-        <textarea readonly type="text" value="{{post.content}}" class="form-control"
-                  formControlName="content"></textarea>
-      </div>
-      <div hidden>
-        <label><b>Nguoi post</b></label>
-        <br>
-        <input readonly type="text" value="{{post.user.username}}" class="form-control" formControlName="user">
-      </div>
-      <div hidden>
-        <label><b>Ngay post</b></label>
-        <br>
-        <input readonly type="text" value="{{post.date}}" class="form-control" formControlName="date">
-      </div>
-      <div hidden>
-        <label>Post's share status</label>
-        <input readonly type="text" value="{{post.shareStatus}}" formControlName="shareStatus">
-      </div>
-      <button>Xoa post</button>
-    </form>
+<div *ngIf="post">
+  <div class="container" *ngIf="currentUser; else loggedOut">
+    <div class="container" *ngIf="currentUser.id == post.user.id; else NotAuthorized">
+      <h1>Xoa post</h1>
+      <form (ngSubmit)="onSubmit()" [formGroup]="deleteForm">
+        <div>
+          <label><b>Title</b></label>
+          <br>
+          <input readonly type="text" value="{{post.title}}" class="form-control" formControlName="title">
+        </div>
+        <div>
+          <label><b>Content</b></label>
+          <br>
+          <textarea readonly type="text" value="{{post.content}}" class="form-control"
+                    formControlName="content"></textarea>
+        </div>
+        <div hidden>
+          <label><b>Nguoi post</b></label>
+          <br>
+          <input readonly type="text" value="{{post.user.username}}" class="form-control" formControlName="user">
+        </div>
+        <div hidden>
+          <label><b>Ngay post</b></label>
+          <br>
+          <input readonly type="text" value="{{post.date}}" class="form-control" formControlName="date">
+        </div>
+        <div hidden>
+          <label>Post's share status</label>
+          <input readonly type="text" value="{{post.shareStatus}}" formControlName="shareStatus">
+        </div>
+        <button>Xoa post</button>
+      </form>
+    </div>
+
+    <ng-template #NotAuthorized>
+      Ban khong co quyen xoa post nay
+    </ng-template>
+
   </div>
 
-  <ng-template #NotAuthorized>
-    Ban khong co quyen xoa post nay
+  <ng-template #loggedOut>
+    Please Login.
   </ng-template>
-
 </div>
-
-<ng-template #loggedOut>
-  Please Login.
-</ng-template>
-

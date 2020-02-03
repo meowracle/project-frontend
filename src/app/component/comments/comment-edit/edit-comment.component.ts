@@ -29,7 +29,8 @@ export class EditCommentComponent implements OnInit {
       description: ['']
     });
     const id = +this.route.snapshot.paramMap.get('id');
-    this.commentService.getCommentById(id).subscribe(next => {
+    this.commentService.getCommentById(id)
+      .subscribe(next => {
       this.comment = next;
       console.log(this.comment);
       this.editForm.patchValue(this.comment);
@@ -41,6 +42,9 @@ export class EditCommentComponent implements OnInit {
 
   onsubmit() {
     const {value} = this.editForm;
+    value.user = {id: this.comment.user.id};
+    value.post = {id: this.comment.post.id};
+    this.comment = value;
     console.log(value);
     this.commentService.editComment(value).subscribe(next => {
       confirm('edited');
