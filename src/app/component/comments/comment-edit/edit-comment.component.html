@@ -1,12 +1,14 @@
-<div class="container" *ngIf="currentUser">
-  <div class="container" *ngIf="currentUser.id == comment.user.id">
+<!--<div class="container" *ngIf="currentUser">
+  <div class="container" *ngIf="currentUser.id == comment.user.id">-->
     <form (ngSubmit)="onsubmit()" [formGroup]="editForm">
       <h2>Edit comment</h2>
       <input type="hidden" formControlName="id">
-      <input type="text" placeholder="description" formControlName="description">
+      <input type="text" value="{{comment.description}}" class="form-control" formControlName="description">
       <br>
-      <button>Edit</button>
+      <button>Save</button>
     </form>
+<!--
   </div>
 </div>
+-->
 
