@@ -4,6 +4,7 @@ import {Comment} from '../../../interfaces/comment';
 import {CommentService} from '../comment.service';
 import {ActivatedRoute, Route, Router} from '@angular/router';
 import {TokenStorageService} from '../../../user/_services/token-storage.service';
+import {PostDetailComponent} from '../../post/post-detail/post-detail.component';
 
 @Component({
   selector: 'app-edit-comment',
@@ -14,19 +15,24 @@ export class EditCommentComponent implements OnInit {
   editForm: FormGroup;
   comment: Comment;
   currentUser: any;
+  currentPost: any;
 
   constructor(private fb: FormBuilder,
               private commentService: CommentService,
               private route: ActivatedRoute,
               private router: Router,
+              private postDetail: PostDetailComponent,
               private token: TokenStorageService) {
   }
 
   ngOnInit() {
     this.currentUser = this.token.getUser();
+    this.currentPost = this.postDetail.post;
     this.editForm = this.fb.group({
       id: [''],
-      description: ['']
+      description: [''],
+      user: [''],
+      post: ['']
     });
     const id = +this.route.snapshot.paramMap.get('id');
     this.commentService.getCommentById(id).subscribe(next => {
@@ -41,9 +47,12 @@ export class EditCommentComponent implements OnInit {
 
   onsubmit() {
     const {value} = this.editForm;
+    value.user = {id: this.currentUser.id};
+    value.post = this.currentPost;
     console.log(value);
     this.commentService.editComment(value).subscribe(next => {
       confirm('edited');
+      this.router.navigate(['']);
     });
   }
 
