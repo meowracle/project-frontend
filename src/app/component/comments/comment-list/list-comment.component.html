@@ -1,6 +1,7 @@
 <div *ngFor="let comment of listComment">
   <b>{{comment.user.username}}:</b>
   {{comment.description}}
+  <div *ngIf="currentUser">
     <div class="dropdown" *ngIf="comment.user.id == currentUser.id">
       <button class="dropbtn">...</button>
       <div class="dropdown-content">
@@ -8,4 +9,5 @@
         <a [routerLink]="['/comment-delete/',comment.id]">xóa</a>
       </div>
     </div>
+  </div>
 </div>
