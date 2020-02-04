@@ -12,6 +12,7 @@ import {AppComponent} from '../../../app.component';
 export class PostListComponent implements OnInit {
   postList: Post[] = [];
   currentUser: any;
+  s: string;
 
   constructor(private token: TokenStorageService,
               private postService: PostService,
