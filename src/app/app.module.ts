@@ -22,6 +22,12 @@ import { EditCommentComponent } from './component/comments/comment-edit/edit-com
 import { PostEditComponent } from './component/post/post-edit/post-edit.component';
 import { PostDeleteComponent } from './component/post/post-delete/post-delete.component';
 import { DeleteCommentComponent } from './component/comments/comment-delete/delete-comment.component';
+import { ChangePasswordComponent } from './password/change-password/change-password.component';
+import { AppHeaderComponent } from './Theme/app-header/app-header.component';
+import {ThemeComponent} from './Theme/theme/theme.component';
+import { PostHomeComponent } from './post-home/post-home.component';
+import { FooterComponent } from './Theme/footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -43,6 +49,11 @@ import { DeleteCommentComponent } from './component/comments/comment-delete/dele
     PostEditComponent,
     PostDeleteComponent,
     DeleteCommentComponent,
+    ChangePasswordComponent,
+    AppHeaderComponent,
+    ThemeComponent,
+    PostHomeComponent,
+    FooterComponent
   ],
     imports: [
         BrowserModule,
