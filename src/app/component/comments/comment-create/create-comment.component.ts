@@ -1,4 +1,4 @@
-import {Component, Injectable, OnInit} from '@angular/core';
+import {Component, EventEmitter, Injectable, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {CommentService} from '../comment.service';
 import {Comment} from '../../../interfaces/comment';
@@ -6,6 +6,7 @@ import {TokenStorageService} from '../../../user/_services/token-storage.service
 import {PostDetailComponent} from '../../post/post-detail/post-detail.component';
 import {Post} from '../../../interfaces/post';
 import {Router} from '@angular/router';
+import {ListCommentComponent} from '../comment-list/list-comment.component';
 
 @Component({
   selector: 'app-create-comment',
@@ -20,13 +21,14 @@ export class CreateCommentComponent implements OnInit {
   createForm: FormGroup;
   currentUser: any;
   currentPost: any;
-
+  @Output() updateList = new EventEmitter();
 
   constructor(private fb: FormBuilder,
               private commentService: CommentService,
               private token: TokenStorageService,
               private postDetail: PostDetailComponent,
-              private router: Router) {
+              private router: Router,
+              private listComment: ListCommentComponent) {
   }
 
   ngOnInit() {
@@ -54,6 +56,7 @@ export class CreateCommentComponent implements OnInit {
           user: '',
           post: ''
         });
+        this.updateList.emit();
       }, error => console.log(error));
   }
 }

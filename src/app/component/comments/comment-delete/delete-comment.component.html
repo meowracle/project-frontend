@@ -1,13 +1,13 @@
 <div *ngIf="comment">
-<div class="container" *ngIf="currentUser">
-  <div class="container" *ngIf="currentUser.id == comment.user.id">
-    <form (ngSubmit)="onsubmit()" [formGroup]="deleteForm">
-      <h2>Delete comment</h2>
-      <input type="hidden" formControlName="id">
-      <input type="text" placeholder="description" formControlName="description">
-      <br>
-      <button>Delete</button>
-    </form>
+  <div class="container" *ngIf="currentUser">
+    <div class="container" *ngIf="currentUser.id == comment.user.id">
+      <form (ngSubmit)="onsubmit()" [formGroup]="deleteForm">
+        <h2>Delete comment</h2>
+        <input type="hidden" formControlName="id">
+        <input type="text" placeholder="description" formControlName="description">
+        <br>
+        <button>Delete</button>
+      </form>
+    </div>
   </div>
-</div>
 </div>
