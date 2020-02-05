@@ -25,6 +25,8 @@ import { DeleteCommentComponent } from './component/comments/comment-delete/dele
 import { ChangePasswordComponent } from './password/change-password/change-password.component';
 import { AppHeaderComponent } from './Theme/app-header/app-header.component';
 import {ThemeComponent} from './Theme/theme/theme.component';
+import { PostHomeComponent } from './post-home/post-home.component';
+import { FooterComponent } from './Theme/footer/footer.component';
 
 
 @NgModule({
@@ -49,7 +51,9 @@ import {ThemeComponent} from './Theme/theme/theme.component';
     DeleteCommentComponent,
     ChangePasswordComponent,
     AppHeaderComponent,
-    ThemeComponent
+    ThemeComponent,
+    PostHomeComponent,
+    FooterComponent
   ],
     imports: [
         BrowserModule,

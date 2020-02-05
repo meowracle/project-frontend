@@ -17,10 +17,12 @@ import {EditCommentComponent} from './component/comments/comment-edit/edit-comme
 import {PostEditComponent} from './component/post/post-edit/post-edit.component';
 import {PostDeleteComponent} from './component/post/post-delete/post-delete.component';
 import {DeleteCommentComponent} from './component/comments/comment-delete/delete-comment.component';
+import {PostHomeComponent} from './post-home/post-home.component';
 
 const routes: Routes = [
   // {path: '', redirectTo: '', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
+  {path: '', component: HomeComponent},
+  {path: 'home', component: PostHomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'profile', component: ProfileComponent},
