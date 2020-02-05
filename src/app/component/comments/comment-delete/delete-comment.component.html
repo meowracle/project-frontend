@@ -1,3 +1,4 @@
+<div *ngIf="comment">
 <div class="container" *ngIf="currentUser">
   <div class="container" *ngIf="currentUser.id == comment.user.id">
     <form (ngSubmit)="onsubmit()" [formGroup]="deleteForm">
@@ -8,4 +9,5 @@
       <button>Delete</button>
     </form>
   </div>
+</div>
 </div>
