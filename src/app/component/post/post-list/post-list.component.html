@@ -4,6 +4,11 @@
     <thead>
     <td><b>Title</b></td>
     <td><b>Content</b></td>
+    <form>
+      Search by first name:
+      <input name="s" type="text"/>
+      <input type="submit" value="Search"/>
+    </form><br/>
     </thead>
     <tr *ngFor="let post of postList">
       <td *ngIf="post.user.username == currentUser.username"><a [routerLink]="['/post-detail', post.id]">{{post.title}}</a></td>

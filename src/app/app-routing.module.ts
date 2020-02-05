@@ -19,7 +19,7 @@ import {PostDeleteComponent} from './component/post/post-delete/post-delete.comp
 import {DeleteCommentComponent} from './component/comments/comment-delete/delete-comment.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  // {path: '', redirectTo: '', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},

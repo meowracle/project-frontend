@@ -4,6 +4,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {CommentService} from '../comment.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {TokenStorageService} from '../../../user/_services/token-storage.service';
+import {Post} from '../../../interfaces/post';
 
 @Component({
   selector: 'app-delete-comment',
@@ -14,6 +15,7 @@ export class DeleteCommentComponent implements OnInit {
   comment: Comment;
   deleteForm: FormGroup;
   currentUser: any;
+  post: Post;
 
   constructor(private fb: FormBuilder,
               private commentService: CommentService,
@@ -26,7 +28,8 @@ export class DeleteCommentComponent implements OnInit {
     this.currentUser = this.token.getUser();
     this.deleteForm = this.fb.group({
       id: [''],
-      description: ['']
+      description: [''],
+      post: ['']
     });
     const id = +this.route.snapshot.paramMap.get('id');
     this.commentService.getCommentById(id).subscribe(next => {
