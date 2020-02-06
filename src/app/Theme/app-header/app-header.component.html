@@ -18,10 +18,10 @@
 
     <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
       <li class="nav-item">
-        <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
+        <a href="/register" class="nav-link" routerLink="register">Đăng kí</a>
       </li>
       <li class="nav-item">
-        <a href="/login" class="nav-link" routerLink="login">Login</a>
+        <a href="/login" class="nav-link" routerLink="login">Đăng nhập</a>
       </li>
     </ul>
 
@@ -30,11 +30,13 @@
         <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
       </li>
       <li class="nav-item">
-        <a href class="nav-link" (click)="logout()">Logout</a>
+        <a href class="nav-link" (click)="logout()">Đăng xuất</a>
       </li>
     </ul>
   </nav>
   <div class="container">
   </div>
-  <app-theme></app-theme>
 </div>
+<br>
+<app-theme></app-theme>
+

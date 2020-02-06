@@ -27,6 +27,8 @@ import { AppHeaderComponent } from './Theme/app-header/app-header.component';
 import {ThemeComponent} from './Theme/theme/theme.component';
 import { PostHomeComponent } from './post-home/post-home.component';
 import { FooterComponent } from './Theme/footer/footer.component';
+import { NavComponent } from './Theme/nav/nav.component';
+import { FootComponent } from './Theme/foot/foot.component';
 
 
 @NgModule({
@@ -53,7 +55,9 @@ import { FooterComponent } from './Theme/footer/footer.component';
     AppHeaderComponent,
     ThemeComponent,
     PostHomeComponent,
-    FooterComponent
+    FooterComponent,
+    NavComponent,
+    FootComponent
   ],
     imports: [
         BrowserModule,
