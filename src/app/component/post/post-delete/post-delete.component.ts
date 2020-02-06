@@ -4,6 +4,8 @@ import {Post} from '../../../interfaces/post';
 import {PostService} from '../../../user/_services/post.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {TokenStorageService} from '../../../user/_services/token-storage.service';
+import {CommentService} from '../../comments/comment.service';
+import {Comment} from '../../../interfaces/comment';
 
 @Component({
   selector: 'app-post-delete',
@@ -14,13 +16,15 @@ export class PostDeleteComponent implements OnInit {
   post: Post;
   deleteForm: FormGroup;
   currentUser: any;
+  comments: Comment[];
 
   constructor(
     private token: TokenStorageService,
     private formBuilder: FormBuilder,
     private postService: PostService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private commentService: CommentService,
   ) {
   }
 
@@ -51,6 +55,10 @@ export class PostDeleteComponent implements OnInit {
       const {value} = this.deleteForm;
       value.user = {id: this.post.user.id};
       console.log(value);
+      this.commentService.deleteCommentByPostId(value.id)
+        .subscribe(data => {
+          console.log('ok');
+        });
       this.postService.deletePost(value.id)
         .subscribe(next => {
           alert('xoa post thanh cong');
