@@ -15,7 +15,7 @@
         <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="post-list">Bài viết của bạn</a>
       </li>
       <li class="nav-item">
-        <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="post-create">Tạo bài viết mới</a>
+        <a href="/post-create" class="nav-link" *ngIf="isLoggedIn" routerLink="post-create">Tạo bài viết mới</a>
       </li>
     </ul>
 
@@ -33,13 +33,11 @@
         <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
       </li>
       <li class="nav-item">
-        <a href class="nav-link" (click)="logout()">Đăng xuất</a>
+        <a href class="nav-link" (click)="logout()">Logout</a>
       </li>
     </ul>
   </nav>
   <div class="container">
   </div>
+<!--  <app-theme></app-theme>-->
 </div>
-<br>
-<app-theme></app-theme>
-
