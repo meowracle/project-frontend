@@ -1,3 +1,11 @@
 .body {
-  background-image: url("../../assets/images/anhnen2.png");
+  background-image: url("../../assets/images/anhnendep3.jpg");
+  width: 80%;
+  margin: 0 auto;
+}
+.diarylist {
+  color: white;
+}
+.table {
+  color: white;
 }
