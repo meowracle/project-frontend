@@ -1,7 +1,9 @@
-<div *ngFor="let comment of listComment">
-  <b>{{comment.user.username}}:</b>
-  {{comment.description}}
-  <div *ngIf="currentUser">
+<div *ngFor="let comment of listComment" class="container">
+  <div class="float-left">
+    <b>{{comment.user.username}}:</b>
+    {{comment.description}}
+  </div>
+  <div *ngIf="currentUser" class="float-right">
     <div class="dropdown" *ngIf="comment.user.id == currentUser.id">
       <button class="dropbtn">...</button>
       <div class="dropdown-content">
@@ -10,5 +12,7 @@
       </div>
     </div>
   </div>
+  <br>
 </div>
+<br>
 <app-create-comment (updateList)="loadCommentList()"></app-create-comment>

@@ -1,5 +1,5 @@
-<h1>Chi tiet post</h1>
-<div *ngIf="post">
+<div *ngIf="post" class="container">
+  <h1>Chi tiet post</h1>
   <div>
     <label><b>Title</b></label>
     <br>
@@ -30,7 +30,7 @@
   <div>
     <label>Pictures</label>
     <div *ngFor="let picture of post.pictures, index as i">
-      <img src="{{picture.src}}" width="200px">
+      <img src="{{picture.src}}" width="200px" height="150px">
     </div>
   </div>
   <br>
