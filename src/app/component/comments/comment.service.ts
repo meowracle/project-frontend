@@ -37,4 +37,9 @@ export class CommentService {
   deleteComment(id: number): Observable<any> {
     return this.http.delete(this.apiURL + '/' + id);
   }
+
+  deleteCommentByPostId(id: number): Observable<any> {
+    console.log(id);
+    return this.http.delete(this.apiURL + '/posts/' + id);
+  }
 }
