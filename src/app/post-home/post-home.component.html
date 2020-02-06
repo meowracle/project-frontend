@@ -9,7 +9,7 @@
       <td><b>Người đăng bài</b></td>
       </thead>
       <tr *ngFor="let post of postList">
-        <td><a [routerLink]="['/post-detail', post.id]">{{post.title}}</a></td>
+        <td><b><a [routerLink]="['/post-detail', post.id]">{{post.title}}</a></b></td>
         <td>{{post.user.username}}</td>
       </tr>
     </table>
@@ -22,7 +22,7 @@
       <td><b>Người đăng bài</b></td>
       </thead>
       <tr *ngFor="let post of postList">
-        <td><a [routerLink]="['/post-detail', post.id]">{{post.title}}</a></td>
+        <td><b><a [routerLink]="['/post-detail', post.id]">{{post.title}}</a></b></td>
         <td>{{post.user.username}}</td>
       </tr>
     </table>
