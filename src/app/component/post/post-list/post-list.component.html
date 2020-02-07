@@ -2,20 +2,19 @@
   <h1 class="diarylist">Danh sách các bài viết của bạn</h1>
   <table class="table table-hover table-bordered">
     <thead>
-    <td><b>Title</b></td>
-    <td><b>Content</b></td>
+    <td><b>Tiêu đề</b></td>
+    <td><b>Nội dung</b></td>
     <br/>
     </thead>
     <tr *ngFor="let post of postList">
       <td *ngIf="post.user.username == currentUser.username"><b><a [routerLink]="['/post-detail', post.id]">{{post.title}}</a></b></td>
       <td *ngIf="post.user.username == currentUser.username">{{post.content}}</td>
-      <td *ngIf="post.user.username == currentUser.username"><a [routerLink]="['/post-edit/', post.id]">Edit</a></td>
-      <td *ngIf="post.user.username == currentUser.username"><a [routerLink]="['/post-delete/', post.id]">Delete</a></td>
+      <td *ngIf="post.user.username == currentUser.username"><a [routerLink]="['/post-edit/', post.id]">Chỉnh sửa</a></td>
+      <td *ngIf="post.user.username == currentUser.username"><a [routerLink]="['/post-delete/', post.id]">Xóa</a></td>
     </tr>
   </table>
 </div>
 <ng-template #loggedOut>
-  Please login.
+  Hãy đăng nhập
 </ng-template>
-<app-foot></app-foot>
 

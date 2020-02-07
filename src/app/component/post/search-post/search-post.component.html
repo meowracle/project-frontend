@@ -1,0 +1,4 @@
+<form>
+  <input  class="search" placeholder="Tên bài viết cần tìm" (keyup)="searchPost($event.currentTarget)">
+  <button class="search1" [routerLink]="['/search-post-info',this.tittleSearch]">Tìm kiếm</button>
+</form>
