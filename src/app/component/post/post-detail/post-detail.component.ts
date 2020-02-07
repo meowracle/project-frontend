@@ -1,4 +1,4 @@
-import {Component, Injectable, OnInit} from '@angular/core';
+import {Component, Injectable, Input, OnInit} from '@angular/core';
 import {Post} from '../../../interfaces/post';
 import {PostService} from '../../../user/_services/post.service';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -16,6 +16,7 @@ import {DomSanitizer} from '@angular/platform-browser';
   providedIn: 'root'
 })
 export class PostDetailComponent implements OnInit {
+  @Input() url = location.href;
   post: Post;
   currentUser: any;
   src;
@@ -29,8 +30,7 @@ export class PostDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const currentUrl = this.router.url;
-    console.log('http://localhost:4200/' + currentUrl);
+    console.log(this.url)
     this.currentUser = this.token.getUser();
     const id = +this.route.snapshot.paramMap.get('id');
     this.postService.getPostById(id).subscribe(
