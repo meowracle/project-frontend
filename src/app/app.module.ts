@@ -31,6 +31,9 @@ import { NavComponent } from './Theme/nav/nav.component';
 import { FootComponent } from './Theme/foot/foot.component';
 import { SearchPostComponent } from './component/post/search-post/search-post.component';
 import { SearchPostInfoComponent } from './component/post/search-post-info/search-post-info.component';
+import {FacebookShareComponent} from './component/share/facebook-share/facebook-share.component';
+import {JwSocialButtonsModule} from 'jw-angular-social-buttons';
+import {ShareButtonsModule} from '@ngx-share/buttons';
 
 
 @NgModule({
@@ -61,16 +64,22 @@ import { SearchPostInfoComponent } from './component/post/search-post-info/searc
     NavComponent,
     FootComponent,
     SearchPostComponent,
-    SearchPostInfoComponent
+    SearchPostInfoComponent,
+    FacebookShareComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        HttpClientModule,
-        ReactiveFormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    JwSocialButtonsModule,
+    ShareButtonsModule
+  ],
+  exports: [
+  ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
