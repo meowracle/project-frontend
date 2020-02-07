@@ -8,4 +8,5 @@ export interface Post {
   date: any;
   shareStatus: boolean;
   pictures: Picture[];
+  video: string;
 }

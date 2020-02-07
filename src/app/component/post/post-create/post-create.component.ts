@@ -38,6 +38,7 @@ export class PostCreateComponent implements OnInit {
       title: ['', [Validators.required, Validators.minLength(1)]],
       content: ['', [Validators.required, Validators.minLength(6)]],
       shareStatus: [''],
+      video: ['']
     });
     this.usedPictureFiles = [];
     this.previewUrl = [];
