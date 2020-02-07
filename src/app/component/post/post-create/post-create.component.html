@@ -1,5 +1,5 @@
 <div class="container" *ngIf="currentUser; else loggedOut">
-  <h1 class="diarylist">Create a new post</h1>
+  <h1 class="diarylist">Tạo một bài viết mới</h1>
   <form class="form" [formGroup]="createForm" (ngSubmit)="onSubmit()">
 
     <div>
@@ -7,23 +7,23 @@
     </div>
 
     <div>
-      <label><b>Title</b>
-        <input placeholder="Post's title" type="text" formControlName="title" class="form-control"
+      <label><b>Tiêu đề</b>
+        <input placeholder="Tiêu đề" type="text" formControlName="title" class="form-control"
                style="width: 1100px">
         <div class="alert-danger" *ngIf="createForm.get('title').invalid && createForm.get('title').touched"
              style="color: red">
-          Title must be at least 1 character!
+          Tiêu đề cần ít nhất 1 kí tự !
         </div>
       </label>
     </div>
 
     <div>
-      <label><b>Content</b>
-        <textarea placeholder="Post's content" type="text" formControlName="content" class="form-control"
+      <label><b>Nội dung</b>
+        <textarea placeholder="Nội dung" type="text" formControlName="content" class="form-control"
                   style="width: 1100px; height: 300px"></textarea>
         <div class="alert-danger" *ngIf="createForm.get('content').invalid && createForm.get('content').touched"
              style="color: red">
-          Content must be at least 1 character!
+          Nội dung cần ít nhất 1 kí tự !
         </div>
       </label>
     </div>
@@ -33,7 +33,7 @@
     <!--    </div>-->
 
     <div>
-      <label>Choose post's share status</label>
+      <label>Trạng thái</label>
       <select formControlName="shareStatus" class="form-control">
         <option value="true">Public</option>
         <option value="false">Private</option>
@@ -41,7 +41,7 @@
     </div>
 
     <div class="form-group">
-      <label>Picture</label>
+      <label>Ảnh</label>
       <input type="file" class="form-control" accept="image/*" (change)="onSelectFile($event)" multiple>
     </div>
     <div class="form-group" style="height: 100px">
@@ -54,13 +54,12 @@
 
     <br>
     <div>
-      <button type="submit" class="btn btn-info">Submit</button>
+      <button type="submit" class="btn btn-info">Tạo</button>
     </div>
   </form>
 </div>
 
 <ng-template #loggedOut>
-  Please login.
+ Hãy đăng nhập !
 </ng-template>
 <br>
-<app-foot></app-foot>

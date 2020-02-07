@@ -4,36 +4,36 @@
       <h1>Xoa post</h1>
       <form (ngSubmit)="onSubmit()" [formGroup]="deleteForm">
         <div>
-          <label><b>Title</b></label>
+          <label><b>Tiêu Đề</b></label>
           <br>
           <input readonly type="text" value="{{post.title}}" class="form-control" formControlName="title">
         </div>
         <div>
-          <label><b>Content</b></label>
+          <label><b>Nội dung</b></label>
           <br>
           <textarea readonly type="text" value="{{post.content}}" class="form-control"
                     formControlName="content"></textarea>
         </div>
         <div hidden>
-          <label><b>Nguoi post</b></label>
+          <label><b>Người đăng</b></label>
           <br>
           <input readonly type="text" value="{{post.user.username}}" class="form-control" formControlName="user">
         </div>
         <div hidden>
-          <label><b>Ngay post</b></label>
+          <label><b>Ngày đăng</b></label>
           <br>
           <input readonly type="text" value="{{post.date}}" class="form-control" formControlName="date">
         </div>
         <div hidden>
-          <label>Post's share status</label>
+          <label>Trạng thái</label>
           <input readonly type="text" value="{{post.shareStatus}}" formControlName="shareStatus">
         </div>
-        <button>Xoa post</button>
+        <button>Xóa bài viết</button>
       </form>
     </div>
 
     <ng-template #NotAuthorized>
-      Ban khong co quyen xoa post nay
+    Bạn không có quyền xóa bài viết này
     </ng-template>
 
   </div>

@@ -29,6 +29,8 @@ import { PostHomeComponent } from './post-home/post-home.component';
 import { FooterComponent } from './Theme/footer/footer.component';
 import { NavComponent } from './Theme/nav/nav.component';
 import { FootComponent } from './Theme/foot/foot.component';
+import { SearchPostComponent } from './component/post/search-post/search-post.component';
+import { SearchPostInfoComponent } from './component/post/search-post-info/search-post-info.component';
 
 
 @NgModule({
@@ -57,7 +59,9 @@ import { FootComponent } from './Theme/foot/foot.component';
     PostHomeComponent,
     FooterComponent,
     NavComponent,
-    FootComponent
+    FootComponent,
+    SearchPostComponent,
+    SearchPostInfoComponent
   ],
     imports: [
         BrowserModule,
