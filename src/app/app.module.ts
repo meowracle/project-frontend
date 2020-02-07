@@ -1,7 +1,7 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 import {LoginComponent} from './user/login/login.component';
 import {RegisterComponent} from './user/register/register.component';
 import {BoardAdminComponent} from './user/board-admin/board-admin.component';
@@ -13,22 +13,25 @@ import {AppRoutingModule} from './app-routing.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {authInterceptorProviders} from './user/_helpers/auth.interceptor';
-import { PostCreateComponent } from './component/post/post-create/post-create.component';
-import { PostListComponent } from './component/post/post-list/post-list.component';
-import { PostDetailComponent } from './component/post/post-detail/post-detail.component';
-import { ListCommentComponent } from './component/comments/comment-list/list-comment.component';
+import {PostCreateComponent} from './component/post/post-create/post-create.component';
+import {PostListComponent} from './component/post/post-list/post-list.component';
+import {PostDetailComponent} from './component/post/post-detail/post-detail.component';
+import {ListCommentComponent} from './component/comments/comment-list/list-comment.component';
 import {CreateCommentComponent} from './component/comments/comment-create/create-comment.component';
-import { EditCommentComponent } from './component/comments/comment-edit/edit-comment.component';
-import { PostEditComponent } from './component/post/post-edit/post-edit.component';
-import { PostDeleteComponent } from './component/post/post-delete/post-delete.component';
-import { DeleteCommentComponent } from './component/comments/comment-delete/delete-comment.component';
-import { ChangePasswordComponent } from './password/change-password/change-password.component';
-import { AppHeaderComponent } from './Theme/app-header/app-header.component';
+import {EditCommentComponent} from './component/comments/comment-edit/edit-comment.component';
+import {PostEditComponent} from './component/post/post-edit/post-edit.component';
+import {PostDeleteComponent} from './component/post/post-delete/post-delete.component';
+import {DeleteCommentComponent} from './component/comments/comment-delete/delete-comment.component';
+import {ChangePasswordComponent} from './password/change-password/change-password.component';
+import {AppHeaderComponent} from './Theme/app-header/app-header.component';
 import {ThemeComponent} from './Theme/theme/theme.component';
-import { PostHomeComponent } from './post-home/post-home.component';
-import { FooterComponent } from './Theme/footer/footer.component';
-import { NavComponent } from './Theme/nav/nav.component';
-import { FootComponent } from './Theme/foot/foot.component';
+import {PostHomeComponent} from './post-home/post-home.component';
+import {FooterComponent} from './Theme/footer/footer.component';
+import {NavComponent} from './Theme/nav/nav.component';
+import {FootComponent} from './Theme/foot/foot.component';
+import {FacebookShareComponent} from './component/share/facebook-share/facebook-share.component';
+import {JwSocialButtonsModule} from 'jw-angular-social-buttons';
+import {ShareButtonsModule} from '@ngx-share/buttons';
 
 
 @NgModule({
@@ -57,16 +60,22 @@ import { FootComponent } from './Theme/foot/foot.component';
     PostHomeComponent,
     FooterComponent,
     NavComponent,
-    FootComponent
+    FootComponent,
+    FacebookShareComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        HttpClientModule,
-        ReactiveFormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    JwSocialButtonsModule,
+    ShareButtonsModule
+  ],
+  exports: [
+  ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
