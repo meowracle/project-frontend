@@ -28,6 +28,11 @@
     <input disabled type="text" value="{{post.date}}" class="form-control">
   </div>
   <div>
+    <label><b>Video</b></label>
+    <br>
+    <iframe width="560" height="315" [src]="src" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div>
     <label>Ảnh</label>
     <div *ngFor="let picture of post.pictures, index as i">
       <img src="{{picture.src}}" width="200px" height="150px">
