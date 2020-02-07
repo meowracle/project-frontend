@@ -32,4 +32,8 @@ export class PostService {
   deletePost(id: number): Observable<any> {
     return this.http.delete(API_URL + 'posts/' + id);
   }
+  findAllByTittleContaining(tittle: string): Observable<Post[]> {
+    console.log(tittle); 
+    return this.http.post<Post[]>(API_URL + 'posts-search/', tittle);
+  }
 }
