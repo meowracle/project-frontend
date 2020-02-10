@@ -9,8 +9,8 @@
       <td><b>Người đăng bài</b></td>
       </thead>
       <tr *ngFor="let post of postList">
-        <td><b><a [routerLink]="['/post-detail', post.id]">{{post.title}}</a></b></td>
-        <td>{{post.user.username}}</td>
+        <td *ngIf="post.shareStatus == true || post.user.id == currentUser.id"><b><a [routerLink]="['/post-detail', post.id]">{{post.title}}</a></b></td>
+        <td *ngIf="post.shareStatus == true || post.user.id == currentUser.id">{{post.user.username}}</td>
       </tr>
     </table>
   </div>
@@ -22,8 +22,8 @@
       <td><b>Người đăng bài</b></td>
       </thead>
       <tr *ngFor="let post of postList">
-        <td><b><a [routerLink]="['/post-detail', post.id]">{{post.title}}</a></b></td>
-        <td>{{post.user.username}}</td>
+        <td *ngIf="post.shareStatus == true"><b><a [routerLink]="['/post-detail', post.id]">{{post.title}}</a></b></td>
+        <td *ngIf="post.shareStatus == true">{{post.user.username}}</td>
       </tr>
     </table>
   </ng-template>
