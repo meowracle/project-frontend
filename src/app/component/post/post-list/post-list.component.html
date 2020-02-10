@@ -4,7 +4,6 @@
     <thead>
     <td><b>Tiêu đề</b></td>
     <td><b>Nội dung</b></td>
-    <br/>
     </thead>
     <tr *ngFor="let post of postList">
       <td *ngIf="post.user.username == currentUser.username"><b><a [routerLink]="['/post-detail', post.id]">{{post.title}}</a></b></td>
@@ -15,6 +14,6 @@
   </table>
 </div>
 <ng-template #loggedOut>
-  Hãy đăng nhập
+  Hãy đăng nhập.
 </ng-template>
 

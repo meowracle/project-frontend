@@ -1,7 +1,7 @@
 <div *ngIf="post" class="container">
   <h1>Chi tiết bài viết</h1>
   <div>
-    <label><b>Tiêu Đề</b></label>
+    <label><b>Tiêu đề</b></label>
     <br>
     <input disabled type="text" value="{{post.title}}" class="form-control">
   </div>
@@ -27,13 +27,13 @@
     <br>
     <input disabled type="text" value="{{post.date}}" class="form-control">
   </div>
-  <div>
+  <div *ngIf="post.video">
     <label><b>Video</b></label>
     <br>
     <iframe width="560" height="315" [src]="src" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
-  <div>
-    <label>Ảnh</label>
+  <div *ngIf="post.pictures">
+    <label><b>Ảnh</b></label>
     <div *ngFor="let picture of post.pictures, index as i">
       <img src="{{picture.src}}" width="200px" height="150px">
     </div>

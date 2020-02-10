@@ -37,7 +37,8 @@ export class PostEditComponent implements OnInit {
       title: ['', [Validators.required, Validators.minLength(1)]],
       content: ['', [Validators.required, Validators.minLength(6)]],
       date: [''],
-      shareStatus: ['']
+      shareStatus: [''],
+      video: [''],
     });
     this.usedPictureFiles = [];
     this.previewUrl = [];

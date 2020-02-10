@@ -1,11 +1,11 @@
 <div *ngIf="post">
   <div class="container" *ngIf="currentUser; else loggedOut">
     <div class="container" *ngIf="currentUser.id == post.user.id; else NotAuthorized">
-      <h1>Chinh sua post</h1>
+      <h1>Chỉnh sửa bài viết</h1>
 
       <form (ngSubmit)="onSubmit()" [formGroup]="editForm">
         <div>
-          <label><b>Title</b></label>
+          <label><b>Tiêu đề</b></label>
           <br>
           <input type="text" value="{{post.title}}" class="form-control" formControlName="title">
           <div class="alert-danger" *ngIf="editForm.get('title').invalid && editForm.get('title').touched"
@@ -15,7 +15,7 @@
         </div>
 
         <div>
-          <label><b>Content</b></label>
+          <label><b>Nội dung</b></label>
           <br>
           <textarea type="text" value="{{post.content}}" class="form-control" formControlName="content"></textarea>
           <div class="alert-danger" *ngIf="editForm.get('content').invalid && editForm.get('content').touched"
@@ -25,26 +25,30 @@
         </div>
 
         <div hidden>
-          <label><b>Nguoi post</b></label>
+          <label><b>Người viết bài</b></label>
           <br>
           <input readonly type="text" value="{{post.user.username}}" class="form-control" formControlName="user">
         </div>
 
         <div hidden>
-          <label><b>Ngay post</b></label>
+          <label><b>Ngày viết bài</b></label>
           <br>
           <input readonly type="text" value="{{post.date}}" class="form-control" formControlName="date">
         </div>
 
         <div>
-          <label>Choose post's share status</label>
+          <label>Trạng thái chia sẻ</label>
           <select formControlName="shareStatus" class="form-control">
             <option value="true">Public</option>
             <option value="false">Private</option>
           </select>
         </div>
         <div>
-          <label>Picture</label>
+          <label>Video</label>
+          <input type="text" class="form-control" formControlName="video">
+        </div>
+        <div>
+          <label>Hình ảnh</label>
           <input type="file" class="form-control" accept="image/*" (change)="onSelectFile($event)" multiple>
         </div>
         <div class="form-group" style="height: 100px">
@@ -56,18 +60,18 @@
           </div>
         </div>
         <div class="form-group">
-          <button>Save</button>
+          <button>Lưu lại</button>
         </div>
       </form>
     </div>
 
     <ng-template #NotAuthorized>
-      Ban khong co quyen chinh sua post nay
+      Bạn không có quyền chỉnh sửa bài viết này
     </ng-template>
 
   </div>
 
   <ng-template #loggedOut>
-    Please Login.
+    Hãy đăng nhập.
   </ng-template>
 </div>
