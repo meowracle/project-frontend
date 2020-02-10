@@ -1,4 +1,4 @@
-<div  class="search-post" id="container">
+<div class="search-post" id="container">
   <div class="container-fluid padding">
     <div class="row welcome text-center">
       <div class="col-12">
@@ -9,13 +9,19 @@
       <div class="col-12">
         <div class="container-fluid padding" align="center">
           <div class="row">
-            <div class="col-md-3" *ngFor="let postSearch of postList, index as i">
-              <table class="table">
+            <div class="col-md-6">
+              <table class="table" class="col-md-6">
                 <tr>
                   <td class="tittle">Tiêu đề</td>
+                  <td class="user">Người viết</td>
                 </tr>
-                <tr>
-                  <a [routerLink]="['/post-detail', postSearch.id]">{{postSearch.title}}</a>
+                <tr *ngFor="let postSearch of postList, index as i" class="post-link">
+                  <td>
+                    <a [routerLink]="['/post-detail', postSearch.id]">{{postSearch.title}}</a>
+                  </td>
+                  <td>
+                    <div>{{postSearch.user.username}}</div>
+                  </td>
                 </tr>
               </table>
             </div>
