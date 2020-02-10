@@ -81,7 +81,7 @@ export class PostCreateComponent implements OnInit {
     this.post.pictures = this.pictures;
     this.postService.createPost(this.post)
       .subscribe(next => {
-        alert('tao post thanh cong');
+        alert('Bạn đã tạo 1 bài viết mới !');
         this.ngOnInit();
       });
   }
