@@ -34,7 +34,7 @@
     <div class="col-sm-6" *ngFor="let post of postList">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">{{post.title}}</h5>
+          <b><h4 class="card-title">{{post.title}}</h4></b>
           đăng bởi: <b><p class="card-text">{{post.user.username}}</p></b>
           <p class="card-text">{{post.date | date: 'dd/MM/yyyy hh:mm'}}</p>
           <a [routerLink]="['/post-detail', post.id]" class="btn btn-primary">Chi tiết bài viết</a>
