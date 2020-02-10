@@ -3,11 +3,13 @@
   <table class="table table-hover table-bordered">
     <thead>
     <td><b>Tiêu đề</b></td>
-    <td><b>Nội dung</b></td>
+    <td><b>Ngày viết bài</b></td>
+    <td><b>Trạng thái chia sẻ</b></td>
     </thead>
     <tr *ngFor="let post of postList">
       <td *ngIf="post.user.username == currentUser.username"><b><a [routerLink]="['/post-detail', post.id]">{{post.title}}</a></b></td>
-      <td *ngIf="post.user.username == currentUser.username">{{post.content}}</td>
+      <td *ngIf="post.user.username == currentUser.username">{{post.date | date: 'dd/MM/yyyy hh:mm'}}</td>
+      <td *ngIf="post.user.username == currentUser.username">{{post.shareStatus ? 'Public' : 'Private'}}</td>
       <td *ngIf="post.user.username == currentUser.username"><a [routerLink]="['/post-edit/', post.id]">Chỉnh sửa</a></td>
       <td *ngIf="post.user.username == currentUser.username"><a [routerLink]="['/post-delete/', post.id]">Xóa</a></td>
     </tr>

@@ -1,4 +1,4 @@
-<div *ngFor="let comment of listComment" class="container">
+<div *ngFor="let comment of listComment" class="container text-md-left col-md-12">
   <div class="float-left">
     <b>{{comment.user.username}}:</b>
     {{comment.description}}
@@ -6,7 +6,7 @@
   <div *ngIf="currentUser" class="float-right">
     <div class="dropdown" *ngIf="comment.user.id == currentUser.id">
       <button class="dropbtn">...</button>
-      <div class="dropdown-content">
+      <div class="dropdown-content col-md-3 text-md-left">
         <a [routerLink]="['/comment-edit/',comment.id]">chỉnh sửa</a>
         <a [routerLink]="['/comment-delete/',comment.id]">xóa</a>
       </div>

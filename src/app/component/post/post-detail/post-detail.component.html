@@ -25,7 +25,7 @@
   <div>
     <label><b>Ngày đăng bài</b></label>
     <br>
-    <input disabled type="text" value="{{post.date}}" class="form-control">
+    <input disabled type="text" value="{{post.date | date: 'dd/MM/yyyy hh:mm'}}" class="form-control">
   </div>
   <div *ngIf="post.video">
     <label><b>Video</b></label>

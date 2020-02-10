@@ -1,8 +1,7 @@
 <div class="container" *ngIf="currentUser">
   <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
-    <h5>Leave a comment about this post</h5>
-    <input type="text" placeholder="Comment here" class="form-control" formControlName="description">
-    <br>
-    <button type="submit">Bình luận</button>
+    <h5>Bình luận về bài viết này</h5>
+    <textarea type="text" placeholder="Viết bình luận tại đây..." class="form-control" formControlName="description" rows="5"></textarea>
+    <button type="submit" class="alert-success">Bình luận</button>
   </form>
 </div>
