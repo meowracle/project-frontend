@@ -30,3 +30,9 @@ label {
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
+.col-md-12 {
+  background-image: url("../../../assets/images/anhnendep456.jpg");
+  width: 80%;
+  margin: 0 auto;
+}
+
