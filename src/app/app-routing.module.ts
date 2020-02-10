@@ -19,6 +19,7 @@ import {PostDeleteComponent} from './component/post/post-delete/post-delete.comp
 import {DeleteCommentComponent} from './component/comments/comment-delete/delete-comment.component';
 import {PostHomeComponent} from './post-home/post-home.component';
 import {SearchPostInfoComponent} from './component/post/search-post-info/search-post-info.component';
+import {ChangePasswordComponent} from './password/change-password/change-password.component';
 
 const routes: Routes = [
   // {path: '', redirectTo: '', pathMatch: 'full'},
@@ -39,7 +40,8 @@ const routes: Routes = [
   {path: 'comment-create', component: CreateCommentComponent},
   {path: 'comment-edit/:id', component: EditCommentComponent},
   {path: 'comment-delete/:id', component: DeleteCommentComponent},
-  {path: 'search-post-info/:tittle', component: SearchPostInfoComponent}
+  {path: 'search-post-info/:tittle', component: SearchPostInfoComponent},
+  {path: 'change-pass', component: ChangePasswordComponent}
 ];
 
 @NgModule({
