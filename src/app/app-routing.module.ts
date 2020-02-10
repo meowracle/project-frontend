@@ -16,7 +16,6 @@ import {CreateCommentComponent} from './component/comments/comment-create/create
 import {EditCommentComponent} from './component/comments/comment-edit/edit-comment.component';
 import {PostEditComponent} from './component/post/post-edit/post-edit.component';
 import {PostDeleteComponent} from './component/post/post-delete/post-delete.component';
-import {DeleteCommentComponent} from './component/comments/comment-delete/delete-comment.component';
 import {PostHomeComponent} from './post-home/post-home.component';
 import {SearchPostInfoComponent} from './component/post/search-post-info/search-post-info.component';
 import {ChangePasswordComponent} from './password/change-password/change-password.component';
@@ -34,12 +33,10 @@ const routes: Routes = [
   {path: 'post-list', component: PostListComponent},
   {path: 'post-detail/:id', component: PostDetailComponent},
   {path: 'post-edit/:id', component: PostEditComponent},
-  {path: 'post-delete/:id', component: PostDeleteComponent},
   {path: 'post-create', component: PostCreateComponent},
   {path: 'comment-list', component: ListCommentComponent},
   {path: 'comment-create', component: CreateCommentComponent},
   {path: 'comment-edit/:id', component: EditCommentComponent},
-  {path: 'comment-delete/:id', component: DeleteCommentComponent},
   {path: 'search-post-info/:tittle', component: SearchPostInfoComponent},
   {path: 'change-pass', component: ChangePasswordComponent}
 ];
