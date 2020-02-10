@@ -4,6 +4,7 @@ import {Comment} from '../../../interfaces/comment';
 import {TokenStorageService} from '../../../user/_services/token-storage.service';
 import {PostDetailComponent} from '../../post/post-detail/post-detail.component';
 import {Post} from '../../../interfaces/post';
+import {ActivatedRoute, Router} from '@angular/router';
 
 
 @Component({
@@ -15,13 +16,16 @@ import {Post} from '../../../interfaces/post';
   providedIn: 'root'
 })
 export class ListCommentComponent implements OnInit {
+  comment: Comment;
   listComment: Comment[];
   currentUser: any;
   @Input() currentPost: Post;
   constructor(
     private token: TokenStorageService,
     private commentService: CommentService,
-    private postDetail: PostDetailComponent) {
+    private postDetail: PostDetailComponent,
+    private route: ActivatedRoute,
+    private router: Router) {
   }
 
   ngOnInit() {
@@ -43,6 +47,10 @@ export class ListCommentComponent implements OnInit {
         this.listComment = [];
       });*/
     this.loadCommentList();
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.commentService.getCommentById(id).subscribe( next1 => {
+      this.comment = next1;
+    });
   }
 
   loadCommentList() {
@@ -54,5 +62,14 @@ export class ListCommentComponent implements OnInit {
         console.log(error);
         this.listComment = [];
       });
+  }
+  onSubmit(id) {
+    const s = confirm('Bạn có chốt là xóa comment này không ?');
+    if (s) {
+      this.commentService.deleteComment(id).subscribe(next => {
+        alert('Đã xóa rồi đó !');
+        this.loadCommentList();
+      });
+    }
   }
 }

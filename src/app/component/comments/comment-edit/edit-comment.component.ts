@@ -48,6 +48,7 @@ export class EditCommentComponent implements OnInit {
     console.log(value);
     this.commentService.editComment(value).subscribe(next => {
       confirm('edited');
+      this.router.navigate(['/post-detail/:', value.post]);
     });
   }
 

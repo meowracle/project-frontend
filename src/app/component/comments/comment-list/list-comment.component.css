@@ -49,3 +49,7 @@
   padding: 5px;
   border-style: ridge;
 }
+.button {
+  background-color: green;
+  border-radius: 5px;
+}
