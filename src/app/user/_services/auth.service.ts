@@ -29,4 +29,18 @@ export class AuthService {
       password: user.password
     }, httpOptions);
   }
+  checkPassword(credential): Observable<any> {
+    console.log(credential);
+    return this.http.post(AUTH_API + 'check-pass', {
+      username: credential.username,
+      password: credential.password
+    }, httpOptions);
+  }
+  changePassword(credential): Observable<any> {
+    console.log(credential);
+    return this.http.post(AUTH_API + 'change-pass', {
+      username: credential.username,
+      password: credential.password
+    }, httpOptions);
+  }
 }
