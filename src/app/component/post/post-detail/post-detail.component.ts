@@ -30,7 +30,7 @@ export class PostDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.url)
+    console.log(this.url);
     this.currentUser = this.token.getUser();
     const id = +this.route.snapshot.paramMap.get('id');
     this.postService.getPostById(id).subscribe(

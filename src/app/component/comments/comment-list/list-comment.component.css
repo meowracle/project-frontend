@@ -53,3 +53,21 @@
   background-color: green;
   border-radius: 5px;
 }
+
+.messages {
+  margin-bottom: 30px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+}
+.message-text {
+  padding: 10px;}
+span {
+  font-size: 11px;
+  opacity: 0.8;
+  font-weight: bold;
+}
+p {
+  font-size: 15px;
+  opacity: 0.6;
+  margin: 2px 0;
+}

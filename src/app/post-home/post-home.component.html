@@ -1,5 +1,4 @@
-<!--<app-nav></app-nav>-->
-<!--<br>-->
+<!--
 <div class = "body">
   <div class="container" *ngIf="currentUser; else loggedOut">
     <h1 class ="diary">Danh sách nhật kí</h1>
@@ -27,4 +26,20 @@
       </tr>
     </table>
   </ng-template>
+</div>
+-->
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6" *ngFor="let post of postList">
+      <div class="card">
+        <div class="card-body">
+          <b><h4 class="card-title">{{post.title}}</h4></b>
+          đăng bởi: <b><p class="card-text">{{post.user.username}}</p></b>
+          <p class="card-text">{{post.date | date: 'dd/MM/yyyy hh:mm'}}</p>
+          <a [routerLink]="['/post-detail', post.id]" class="btn btn-primary">Chi tiết bài viết</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
