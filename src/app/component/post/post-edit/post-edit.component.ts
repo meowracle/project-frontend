@@ -5,6 +5,7 @@ import {PostService} from '../../../user/_services/post.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {TokenStorageService} from '../../../user/_services/token-storage.service';
 import {PictureService} from '../picture.service';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-post-edit',
@@ -18,6 +19,7 @@ export class PostEditComponent implements OnInit {
   usedPictureFiles: any[];
   previewUrl: any[];
   pictures: any[];
+  src;
 
   constructor(
     private token: TokenStorageService,
@@ -26,6 +28,7 @@ export class PostEditComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private pictureService: PictureService,
+    private sanitizer: DomSanitizer,
   ) {
   }
 
@@ -48,6 +51,7 @@ export class PostEditComponent implements OnInit {
       .subscribe(next => {
         this.post = next;
         console.log(this.post);
+        this.src = this.sanitizer.bypassSecurityTrustResourceUrl(this.post.video);
         this.editForm.patchValue(next);
         for (const picture of next.pictures) {
           this.previewUrl.push(picture.src);
