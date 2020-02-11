@@ -30,19 +30,24 @@
 -->
 <div class="container">
   <div class="row">
-    <div class="col-md-6" *ngFor="let post of postList | paginate: {itemsPerPage: 6, currentPage: p}">
-      <div class="card mb-3">
-        <div class="row">
-          <div class="card-body col-md-7">
-            <div class="ml-2">
-              <b><h4 class="card-title">{{post.title}}</h4></b>
-              đăng bởi: <b><p class="card-text">{{post.user.username}}</p></b>
-              <p class="card-text">{{post.date | date: 'dd/MM/yyyy hh:mm'}}</p>
-              <a [routerLink]="['/post-detail', post.id]" class="btn btn-primary">Chi tiết bài viết</a>
+    <div [ngClass]="post.shareStatus?'col-md-6':'col-0' " *ngFor="let post of postList | paginate: {itemsPerPage: 6, currentPage: p}">
+      <div *ngIf="post.shareStatus == true || post.user.id == currentUser.id">
+        <div class="card mb-3 mt-3">
+          <div class="row">
+            <div class="card-body col-md-7">
+              <div class="ml-2">
+                <b><h4 class="card-title">{{post.title}}</h4></b>
+                đăng bởi: <b><p class="card-text">{{post.user.username}}</p></b>
+                <p class="card-text">{{post.date | date: 'dd/MM/yyyy hh:mm'}}</p>
+                <a [routerLink]="['/post-detail', post.id]" class="btn btn-primary">Chi tiết bài viết</a>
+              </div>
             </div>
-          </div>
-          <div class="card-right-side col-md-5">
-            <img src="{{post.pictures[0].src}}" style="height: 200px; width: 200px; border-radius: 50%">
+            <div class="card-right-side col-md-5" *ngIf="post.pictures[0] != null; else noPicture">
+              <img src="{{post.pictures[0].src}}" style="height: 200px; width: 200px; border-radius: 50%">
+            </div>
+            <ng-template #noPicture>
+              <img src="https://edssociety.org.np/uploaded/images/no_image_available10.png" style="height: 200px; width: 200px; border-radius: 50%">
+            </ng-template>
           </div>
         </div>
       </div>

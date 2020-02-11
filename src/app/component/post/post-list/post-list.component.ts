@@ -23,7 +23,7 @@ export class PostListComponent implements OnInit {
   ngOnInit() {
     this.currentUser = this.token.getUser();
     this.postService
-      .getAllPosts()
+      .getPostByUserId(this.currentUser.id)
       .subscribe(next => (this.postList = next)
         , error => (this.postList = []));
   }
