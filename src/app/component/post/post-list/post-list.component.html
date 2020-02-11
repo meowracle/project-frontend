@@ -5,6 +5,8 @@
     <td><b>Tiêu đề</b></td>
     <td><b>Ngày viết bài</b></td>
     <td><b>Trạng thái chia sẻ</b></td>
+    <td><b>Chỉnh sửa</b></td>
+    <td><b>Xóa</b></td>
     </thead>
     <tr *ngFor="let post of postList">
       <td *ngIf="post.user.username == currentUser.username"><b><a [routerLink]="['/post-detail', post.id]">{{post.title}}</a></b></td>
