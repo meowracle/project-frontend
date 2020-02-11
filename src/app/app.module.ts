@@ -63,7 +63,7 @@ import {ShareButtonsModule} from '@ngx-share/buttons';
     FootComponent,
     SearchPostComponent,
     SearchPostInfoComponent,
-    FacebookShareComponent
+    FacebookShareComponent,
   ],
   imports: [
     BrowserModule,
