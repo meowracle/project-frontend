@@ -31,7 +31,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-6" *ngFor="let post of postList">
+    <div class="col-sm-6" *ngFor="let post of postList | paginate: {itemsPerPage: 6, currentPage: p}">
       <div class="card">
         <div class="card-body">
           <b><h4 class="card-title">{{post.title}}</h4></b>
@@ -42,4 +42,7 @@
       </div>
     </div>
   </div>
+</div>
+<div align="center" class="mt-4">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

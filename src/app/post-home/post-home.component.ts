@@ -11,6 +11,7 @@ import {PostService} from '../user/_services/post.service';
 export class PostHomeComponent implements OnInit {
   postList: Post[] = [];
   currentUser: any;
+  p = 1;
 
   constructor(private token: TokenStorageService,
               private postService: PostService) { }

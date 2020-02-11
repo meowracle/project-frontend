@@ -6,7 +6,7 @@
     <td><b>Ngày viết bài</b></td>
     <td><b>Trạng thái chia sẻ</b></td>
     </thead>
-    <tr *ngFor="let post of postList">
+    <tr *ngFor="let post of postList | paginate: {itemsPerPage: 10, currentPage: p}">
       <td *ngIf="post.user.username == currentUser.username"><b><a [routerLink]="['/post-detail', post.id]">{{post.title}}</a></b></td>
       <td *ngIf="post.user.username == currentUser.username">{{post.date | date: 'dd/MM/yyyy hh:mm'}}</td>
       <td *ngIf="post.user.username == currentUser.username">{{post.shareStatus ? 'Public' : 'Private'}}</td>
@@ -18,4 +18,6 @@
 <ng-template #loggedOut>
   Hãy đăng nhập.
 </ng-template>
-
+<div align="center" class="mt-4">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

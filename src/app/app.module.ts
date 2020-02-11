@@ -33,6 +33,7 @@ import { SearchPostInfoComponent } from './component/post/search-post-info/searc
 import {FacebookShareComponent} from './component/share/facebook-share/facebook-share.component';
 import {JwSocialButtonsModule} from 'jw-angular-social-buttons';
 import {ShareButtonsModule} from '@ngx-share/buttons';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -72,7 +73,8 @@ import {ShareButtonsModule} from '@ngx-share/buttons';
     HttpClientModule,
     ReactiveFormsModule,
     JwSocialButtonsModule,
-    ShareButtonsModule
+    ShareButtonsModule,
+    NgxPaginationModule,
   ],
   exports: [
   ],

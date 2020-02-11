@@ -1,4 +1,4 @@
-<div *ngFor="let comment of listComment" class="container">
+<div *ngFor="let comment of listComment | paginate: {itemsPerPage: 10, currentPage: p}" class="container">
   <div class="float-left">
     <b>{{comment.user.username}}:</b>
     {{comment.description}}
@@ -13,6 +13,9 @@
     </div>
   </div>
   <br>
+</div>
+<div align="center" class="mt-4">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
 <br>
 <app-create-comment (updateList)="loadCommentList()"></app-create-comment>

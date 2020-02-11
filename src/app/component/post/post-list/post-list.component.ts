@@ -13,6 +13,7 @@ export class PostListComponent implements OnInit {
   postList: Post[] = [];
   currentUser: any;
   s: string;
+  p = 1;
 
   constructor(private token: TokenStorageService,
               private postService: PostService,
