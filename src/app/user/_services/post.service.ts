@@ -16,6 +16,10 @@ export class PostService {
     return this.http.get<Post[]>(API_URL + 'posts');
   }
 
+  getPostByUserId(id: number): Observable<Post[]> {
+    return this.http.get<Post[]>(API_URL + 'posts/user/' + id);
+  }
+
   getPostById(id: number): Observable<Post> {
     return this.http.get<Post>(API_URL + 'posts/' + id);
   }
@@ -32,6 +36,7 @@ export class PostService {
   deletePost(id: number): Observable<any> {
     return this.http.delete(API_URL + 'posts/' + id);
   }
+
   findAllByTittleContaining(tittle: string): Observable<Post[]> {
     console.log(tittle);
     return this.http.post<Post[]>(API_URL + 'posts-search/', tittle);

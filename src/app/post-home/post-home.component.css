@@ -9,10 +9,17 @@
 .table {
   color: white;
 }
-.col-sm-6 {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
+
 .container {
   background-image: url("../../assets/images/anhnendep6.jpg");
 }
+
+.card-body {
+  margin: 0px;
+}
+
+.card {
+  height: 230px;
+}
+
+

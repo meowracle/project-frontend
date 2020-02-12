@@ -1,18 +1,21 @@
-<div *ngFor="let comment of listComment" class="container">
-  <div class="float-left">
+<div *ngFor="let comment of listComment | paginate: {itemsPerPage: 10, currentPage: p}" class="container">
+  <p class="float-left">
     <b>{{comment.user.username}}:</b>
     {{comment.description}}
-  </div>
+  </p>
   <div *ngIf="currentUser" class="float-right">
     <div class="dropdown" *ngIf="comment.user.id == currentUser.id">
       <button class="dropbtn">...</button>
       <div class="dropdown-content col-md-3 text-md-left">
-        <a><button type ="button"  class ="button" [routerLink]="['/comment-edit/',comment.id]">chỉnh sửa</button></a>
-        <a><button type ="button"  class ="button"  (click)="onSubmit(comment.id)">Xóa</button></a>
+        <a class="button" [routerLink]="['/comment-edit/',comment.id]"><!--<button type ="button"  class ="button" [routerLink]="['/comment-edit/',comment.id]">-->Chỉnh sửa<!--</button>--></a>
+        <a class="button" type="button" (click)="onSubmit(comment.id)"><!--<button type ="button"  class ="button"  (click)="onSubmit(comment.id)">-->Xóa<!--</button>--></a>
       </div>
     </div>
   </div>
   <br>
+</div>
+<div align="center" class="mt-4">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
 <br>
 <app-create-comment (updateList)="loadCommentList()"></app-create-comment>
