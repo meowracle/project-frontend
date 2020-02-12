@@ -13,6 +13,7 @@ export class PostListComponent implements OnInit {
   postList: Post[] = [];
   currentUser: any;
   s: string;
+  p = 1;
 
   constructor(private token: TokenStorageService,
               private postService: PostService,
@@ -22,7 +23,7 @@ export class PostListComponent implements OnInit {
   ngOnInit() {
     this.currentUser = this.token.getUser();
     this.postService
-      .getAllPosts()
+      .getPostByUserId(this.currentUser.id)
       .subscribe(next => (this.postList = next)
         , error => (this.postList = []));
   }

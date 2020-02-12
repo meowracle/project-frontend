@@ -33,6 +33,7 @@ const routes: Routes = [
   {path: 'post-list', component: PostListComponent},
   {path: 'post-detail/:id', component: PostDetailComponent},
   {path: 'post-edit/:id', component: PostEditComponent},
+  {path: 'post-delete/:id', component: PostDeleteComponent},
   {path: 'post-create', component: PostCreateComponent},
   {path: 'comment-list', component: ListCommentComponent},
   {path: 'comment-create', component: CreateCommentComponent},

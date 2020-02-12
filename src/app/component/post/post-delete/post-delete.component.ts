@@ -55,10 +55,18 @@ export class PostDeleteComponent implements OnInit {
       const {value} = this.deleteForm;
       value.user = {id: this.post.user.id};
       console.log(value);
-      this.commentService.deleteCommentByPostId(value.id)
+/*      this.commentService.deleteCommentByPostId(value.id)
         .subscribe(data => {
           console.log('ok');
+        });*/
+      this.commentService.getCommentsByPostId(this.post.id)
+        .subscribe(data => {
+          this.comments = data;
+          console.log(this.comments);
         });
+/*      for (const comment of this.comments) {
+        this.commentService.deleteComment(comment.id);
+      }*/
       this.postService.deletePost(value.id)
         .subscribe(next => {
           alert('xoa post thanh cong');

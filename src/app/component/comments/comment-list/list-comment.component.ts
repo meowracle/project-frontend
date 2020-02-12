@@ -19,6 +19,7 @@ export class ListCommentComponent implements OnInit {
   comment: Comment;
   listComment: Comment[];
   currentUser: any;
+  p = 1;
   @Input() currentPost: Post;
   constructor(
     private token: TokenStorageService,
